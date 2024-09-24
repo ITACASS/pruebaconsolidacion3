@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Navegación Adaptable</title>
+    <link rel="stylesheet" href="assets/CSS/barra.css">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <!--menú para móviles -->
+            <button class="navbar__toggle" id="menuButton">
+                &#9776; <!-- hamburguesa -->
+            </button>
+
+            <!-- Menú para escritorio -->
+            <ul class="navbar__menu" id="navbarMenu">
+                <li><a href="#">Chats</a></li>
+                <li><a href="about.html">Calendario Pruebas</a></li>
+                <li><a href="faq.html">Preguntas Frecuentes</a></li>
+            </ul>
+        </div>
+        <form class="navbar__search">
+            <input type="text" placeholder="Buscar conversaciones...">
+            <button type="submit">🔍</button>
+        </form>
+    </nav>
+
+    <main class="chat">
+        
+        <section class="chat-contact">
+            <h1>Grupo Curso 8A</h1>
+            <h3>Chats</h3>
+            <ul class="conversation-list">
+                <li class="conversation-item unread" data-date="2024-09-12T14:30:00">
+                    <a href="conversation-header"></a>
+                    <img src="assets\img\bellota1.jpg" alt="Foto de perfil" class="profile-pic">
+                    <span class="conversation-name">Mamá Juan Pérez</span>
+                    <span class="conversation-message">Hola, que llevan los niños mañana?</span>
+                    <span class="conversation-time">14:30</span>
+                </li>
+                <li class="conversation-item" data-date="2024-09-11T10:15:00">
+                    <img src="assets\img\hello.jpg" alt="Foto de perfil" class="profile-pic">
+                    <span class="conversation-name">Mamá María López</span>
+                    <span class="conversation-message">Reunión mañana a que hora?.</span>
+                    <span class="conversation-time">11 Sep</span>
+                </li>
+                <li class="conversation-item unread" data-date="2024-09-10T09:00:00">
+                    <img src="assets\img\bombom.jpg" alt="Foto de perfil" class="profile-pic">
+                    <span class="conversation-name">Mamá Carlos Gómez</span>
+                    <span class="conversation-message">¿Puedes darme el calendario de pruebas?</span>
+                    <span class="conversation-time">10 Sep</span>
+                </li>
+                <li class="conversation-item" data-date="2024-09-09T15:45:00">
+                    <img src="assets\img\jimmy.jpg" alt="Foto de perfil" class="profile-pic">
+                    <span class="conversation-name">Papá Ana Fernández</span>
+                    <span class="conversation-message">Gracias por la información.</span>
+                    <span class="conversation-time">09 Sep</span>
+                </li>
+                <li class="conversation-item" data-date="2024-09-08T16:20:00">
+                    <img src="assets\img\goku.jpg" alt="Foto de perfil" class="profile-pic">
+                    <span class="conversation-name">Papá Luis Martínez</span>
+                    <span class="conversation-message">A que hora salen mañana.</span>
+                    <span class="conversation-time">08 Sep</span>
+                </li>
+            </ul>
+            
+
+        </section>
+
+        <aside class="chat-window">
+            <div class="conversation-container"></div>
+            <!-- usuario con el que se está conversando -->
+            <div class="conversation-header">
+                <img src="assets\img\bellota1.jpg" alt="Foto de perfil" class="profile-pic">
+                <h2 class="user-name">Mamá Juan Pérez</h2>
+            </div>
+
+            <!--diálogo -->
+            <div class="message-bubble sender">
+                <p>Hola, ¿cómo estás?</p>
+                <span class="message-time">14:30</span>
+            </div>
+            <div class="message-bubble receiver">
+                <p>¡Hola! Estoy bien, ¿y tú?</p>
+                <span class="message-time">14:31</span>
+            </div>
+            <div class="message-bubble sender">
+                <p>También bien, oye una pregunta?</p>
+                <span class="message-time">14:32</span>
+            </div>
+
+            <!-- Menú dropdown para adjuntar archivos -->
+            <div class="input-container">   
+                <input type="text" id="message-input" placeholder="Escribe un mensaje...">
+                <button id="send-btn">Enviar</button>   
+            </div>
+            <div class="dropdown">
+                <button class="attach-btn">Adjuntar.</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="attachFile('image')">Imagen</a>
+                    <a href="#" onclick="attachFile('video')">Video</a>
+                    <a href="#" onclick="attachFile('document')">Documento</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="assets/JS/barra.js"></script>
+
+</body>
+
+</html>

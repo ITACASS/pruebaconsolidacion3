@@ -1,0 +1,67 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+.menu-toggle {
+    display: none; /* Solo visible en móvil si se desea un menú desplegable */
+}
+
+/* Estilos para el contenedor de Preguntas Frecuentes */
+.faq-container {
+    padding: 20px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 15px;
+    display: none; /* Oculto por defecto */
+    background-color: #fff;
+}
+
+.faq-question:after {
+    content: '➕'; /* Icono de expandir */
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.faq-item.active .faq-question:after {
+    content: '➖'; /* Icono de colapsar */
+}
+
+.faq-item.active .faq-answer {
+    display: block; /* Muestra la respuesta cuando está activo */
+}

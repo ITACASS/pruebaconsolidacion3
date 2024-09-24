@@ -1,0 +1,356 @@
+.navbar {
+    background-color: rgba(196, 119, 179, 0.76);
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__menu li {
+    display: inline;
+}
+
+.navbar__menu a {
+    color: white;
+}
+
+.navbar__menu a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Botón de menú para dispositivos móviles */
+.navbar__toggle {
+    display: block;
+    background-color: #0e7caf;
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.conversation-list {
+    border-right: 1px solid #ddd;
+    background-color: rgba(255, 254, 254, 0.8);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    align-content: center
+}
+
+
+.conversation-item {
+    display: flex;
+    align-content: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.conversation-item:last-child {
+    border-bottom: none;
+}
+
+.conversation-item.unread .conversation-name {
+    font-weight: bold;
+}
+
+.conversation-name {
+    color: #000000;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.conversation-message {
+    margin-left: 10px;
+    color: #555;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.conversation-time {
+    flex: 0;
+    color: #080808;
+    font-size: 12px;
+    align-self: flex-end;
+}
+
+.conversation-item:hover {
+    background-color: #0792bdad;
+}
+
+.chat {
+    display: flex;
+    column-gap: 30px;
+}
+
+.chat-contact,
+h1,
+h3 {
+    flex-basis: 30%;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(139, 13, 197, 0.1);
+    font-size: 24px;
+    color: #810d81;
+    text-align: center;
+    margin-bottom: 10px;
+    flex-direction: column;
+
+}
+
+.chat-window {
+    flex-basis: 70%;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    overflow-y: auto;
+
+}
+
+
+.conversation-container {
+    width: 90%;
+    max-width: 600px;
+}
+
+.conversation-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+/* Estilos para las nubes de diálogo */
+.message-bubble {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.message-bubble.sender {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.message-bubble.receiver {
+    background-color: #f8d7da;
+    align-self: flex-start;
+}
+
+.message-time {
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.message-bubble::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.message-bubble.sender::before {
+    right: -10px;
+    top: 10px;
+    border: 10px solid transparent;
+    border-left-color: #d1e7dd;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.message-bubble.receiver::before {
+    left: -10px;
+    top: 10px;
+    border: 10px solid transparent;
+    border-right-color: #f8d7da;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+/* Estilos para el contenedor del chat */
+.chat-window {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background-size: cover;
+    /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 400px;
+}
+
+/* Estilos para el botón de adjuntar */
+.attach-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+/* Contenedor del dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Lista desplegable (dropdown) oculta por defecto */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f0d8d8;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Opciones del dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+/* Cambia el color al pasar el mouse sobre una opción */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Mostrar el dropdown al hacer clic */
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+/* Contenedor de entrada */
+.input-container {
+    display: flex;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos generales para la sección de chat-contact */
+.chat-contact {
+    padding: 20px;
+  }
+  
+  .conversation-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .conversation-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .profile-pic {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+  }
+  
+  .conversation-name {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .conversation-message {
+    flex: 1;
+  }
+  
+  .conversation-time {
+    margin-left: auto;
+    color: #999;
+    font-size: 11px;
+  }
+  
